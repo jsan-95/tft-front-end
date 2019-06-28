@@ -80,8 +80,7 @@ export class CameraGalleryProvider {
 
 
   public takePicture(navCtrl) {
-    const options: CameraOptions = {
-      quality: 100,
+    const options: CameraOptions = {quality: 100,
       destinationType: this.camera.DestinationType.DATA_URL,
       encodingType: this.camera.EncodingType.JPEG,
       mediaType: this.camera.MediaType.PICTURE,
@@ -107,12 +106,11 @@ export class CameraGalleryProvider {
 
   public addPaint(paint){
     for(let painting of this.paintList){
-      if (painting.id == paint.id){
+      if (painting.objectID == paint.objectID){
         alert("Este cuadro ya lo ha fotografiado");
         return;
       }
     }
-
     this.paintList.push(paint);
   }
 

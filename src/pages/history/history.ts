@@ -15,24 +15,11 @@ export class HistoryPage {
               private loadingCtrl: LoadingController,
               private alertCtrl: AlertController,
               private cameraGallery: CameraGalleryProvider) {
-    localStorage.clear();
 
   }
 
   ionViewDidEnter(){
-
     this.paintings = this.cameraGallery.getPaint();
-
-
-    //
-    // var paintingsItem = localStorage.getItem("paintings");
-    // var paintings_split = paintingsItem.split(";");
-    // for(var i = 0; i < paintings_split.length; i++){
-    //   var jsonPainting = JSON.parse(paintings_split[i]);
-    //   this.paintings.push(jsonPainting);
-    //
-    //
-    // }
   }
 
   goToArtWork(index){

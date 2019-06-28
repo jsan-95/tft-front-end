@@ -10,14 +10,14 @@
 <ion-content padding>
 
 
-  <button class="camera-button" ion-fab float-right color="magent" (click)="send()">
+  <button *ngIf="image.length > 30" class="camera-button" ion-fab float-right color="magent" (click)="send()">
     <ion-icon ios="ios-cloud-upload" md="md-cloud-upload"></ion-icon>
   </button>
 
 
   <img *ngIf="image.length > 30" src="{{image}}"/>
 
-  <div>
+  <div *ngIf="json != ''">
 
     <img src="{{json.primaryImage}}">
     <h1>{{json.department}}</h1>

@@ -28,6 +28,10 @@ export class ArtworkPage {
       this.json = this.cameraGallery.getActualPaint();
       localStorage.removeItem("artWork");
       this.image = "";
+    }else if (localStorage.getItem("fromCamera") != null) {
+      this.image = 'data:image/jpeg;base64,'+this.cameraGallery.getImage();
+      this.json = "";
+      localStorage.removeItem("fromCamera");
     }else{
       this.image = 'data:image/jpeg;base64,'+this.cameraGallery.getImage();
     }
@@ -42,22 +46,11 @@ export class ArtworkPage {
     loading.present();
     this.restfulService.uploadImage(this.image).then(
       (res) => {
-        loading.dismiss();
 
         // this.image = 'data:image/jpeg;base64,'+res.data;
-        this.restfulService.getInfoById(res.data).then(res =>{
-          this.json = JSON.parse(res.data);
+        this.restfulService.getInfoById(res.data).then(info =>{
+          this.json = JSON.parse(info.data);
           this.cameraGallery.addPaint(this.json);
-
-          // var paintings = localStorage.getItem("paintings");
-          // if (paintings == null) {
-          //
-          //   localStorage.setItem("paintings",res.data+";");
-          // }else{
-          //   if(!this.exist(paintings, res.data)){
-          //     localStorage.setItem("paintings",paintings+res.data+";");
-          //   }
-          // }
           loading.dismiss();
         }).catch(error => {
 

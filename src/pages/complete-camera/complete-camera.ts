@@ -32,6 +32,7 @@ export class CompleteCameraPage {
 
   ionViewWillEnter(){
     this.cameraGallery.takePicture(this.navCtrl).then((imageData) => {
+      localStorage.setItem("fromCamera", "true");
       this.navCtrl.parent.select(1);
     }).catch(err => {
       this.navCtrl.parent.select(parseInt(this.navCtrl.parent._selectHistory[this.navCtrl.parent._selectHistory.length-2].split("-")[1]));

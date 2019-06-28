@@ -18,12 +18,6 @@ export class RestfulServiceProvider {
     });
   }
 
-    /*uploadImage(image){
-      return this.HTTP.get(this.BASE_ENDPOINT + "/UploadImage?image="+image,{}, {
-        'Content-Type': 'text/plain',
-      });
-    }*/
-
     uploadImage(image){
       let data = {
         'img': image
@@ -33,11 +27,4 @@ export class RestfulServiceProvider {
       };
       return this.HTTP.post(this.BASE_ENDPOINT+"/action", data, headers);
     }
-
-  login(loginForm){
-    return this.HTTP.post(this.BASE_ENDPOINT+"/Login", loginForm,
-      {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      });
-  }
 }
