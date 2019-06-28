@@ -1,0 +1,7 @@
+{
+  "name": "tft-art-app",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

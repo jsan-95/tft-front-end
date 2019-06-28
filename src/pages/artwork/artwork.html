@@ -1,0 +1,42 @@
+<ion-header>
+
+  <ion-navbar text-center color="viollete">
+    <ion-title>Obra de arte</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+  <button class="camera-button" ion-fab float-right color="magent" (click)="send()">
+    <ion-icon ios="ios-cloud-upload" md="md-cloud-upload"></ion-icon>
+  </button>
+
+
+  <img *ngIf="image.length > 30" src="{{image}}"/>
+
+  <div>
+
+    <img src="{{json.primaryImage}}">
+    <h1>{{json.department}}</h1>
+    <h1>{{json.title}}</h1>
+
+    <p>Cultura: {{json.culture}}</p>
+    <p>Autor: {{json.artistDisplayName}}</p>
+    <p>Autor: {{json.artistDisplayBio}}</p>
+    <p>{{json.artistAlphaSort}}</p>
+    <p>Nacionalidad: {{json.artistNationality}}</p>
+    <p>Comienzo: {{json.artistBeginDate}}</p>
+    <p>Final: {{json.artistEndDate}}</p>
+    <p>Material: {{json.medium}}</p>
+    <p>Dimensiones: {{json.dimensions}}</p>
+    <p>Créditos: {{json.creditLine}}</p>
+    <p>Repositorio: {{json.repository}}</p>
+    <a href="{{json.objectURL}}">Click aquí</a>
+
+  </div>
+
+
+</ion-content>

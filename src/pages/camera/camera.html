@@ -1,0 +1,43 @@
+<ion-content style="background-color: transparent !important;">
+  <ion-navbar text-center color="viollete">
+    <ion-title>Obra de arte</ion-title>
+  </ion-navbar>
+
+  <div class="transparent">
+
+  </div>
+
+  <div class="colorfull">
+
+    <form [formGroup]="imageForm" hidden>
+      <ion-item>
+        <ion-input formControlName="imageInput" value="{{image}}" type="text" hidden></ion-input>
+      </ion-item>
+    </form>
+
+    <ion-fab center bottom>
+      <button class="camera-button" ion-fab color="magent" (click)="takePicture()">
+      </button>
+    </ion-fab>
+
+
+    <!--<ion-fab center bottom style="top:50%;" >
+      <button ion-fab color="darkMagent" (click)="takePicture()">
+        <ion-icon name="md-camera"></ion-icon>
+      </button>
+    </ion-fab>-->
+
+    <!--<ion-fab center bottom>
+      <button ion-fab color="darkMagent" (click)="send()">
+        <ion-icon name="cloud-upload"></ion-icon>
+      </button>
+    </ion-fab>-->
+
+  </div>
+
+</ion-content>
+
+
+
+<!--<button id="camera" ion-button block style="position: absolute; bottom: 0" ion-button (click)="takePicture()">Take Picture</button>-->
+
